@@ -18,13 +18,13 @@ def rename_sports_file(file_path: Path):
     ext = file_path.suffix.lower()
 
     if ext not in VIDEO_EXTENSIONS:
-        print(f"⚠ Skipping unsupported file type: {file_path.name}")
+        print(f"[⚠] Skipping unsupported file type: {file_path.name}")
         return
 
     # Match "TeamA vs. TeamB DD.MM.YY"
     #    match = re.match(r"(.+?)\s+(\d{2})\.(\d{2})\.(\d{2})$", base_name)
     #    if not match:
-    #        print(f"❌ Skipping (no match): {file_path.name}")
+    #        print(f"[X] Skipping (no match): {file_path.name}")
     #        return
     #
     #    matchup, day, month, year_suffix = match.groups()
@@ -35,7 +35,7 @@ def rename_sports_file(file_path: Path):
         base_name,
     )
     if not match:
-        print(f"❌ Skipping (no match): {file_path.name}")
+        print(f"[X] Skipping (no match): {file_path.name}")
         return
 
     team1, vs_at, team2, day, month, year = match.groups()
@@ -53,13 +53,13 @@ def rename_sports_file(file_path: Path):
 
     # Rename
     file_path.rename(new_path)
-    print(f"✅ {file_path.name} -> {new_name}")
+    print(f"[✔] {file_path.name} -> {new_name}")
 
 
 def main(target_folder):
     folder = Path(target_folder)
     if not folder.exists():
-        print(f"❌ Folder not found: {folder}")
+        print(f"[X] Folder not found: {folder}")
         sys.exit(1)
 
     for file in folder.iterdir():
