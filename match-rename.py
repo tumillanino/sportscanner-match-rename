@@ -69,7 +69,7 @@ def main(target_folder):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python rename_sports.py <folder>")
+        print("Usage: python3 match-rename.py <folder path>")
         sys.exit(1)
 
     main(sys.argv[1])
