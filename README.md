@@ -6,7 +6,7 @@ My workflow is basically that I download a file from [sports-video.org.ua](https
 Some things like the directory are hardcoded, so adjust them where necessary.
 
 The file watcher.py listens for new files to be added to the subfolders in '/data/downloads/sports/'.
-When a new file is added, it triggers match-rename.py to run, which takes the name, which from [sports-video.org.ua](https://www.sport-video.org.ua/index.html) is normally formatted like 'Team A vs Team B dd.mm.yyyy.mkv' or 'Team A at Team B dd.mm.yyyy in 40.mkv', and it will format it based on the folder it is in with the structure required by the [SportScanner](https://github.com/mmmmmtasty/SportScanner) Plex plugin to pull metadata from the [TheSportsDB](https://www.thesportsdb.com/) API.
+When a new file is added, it triggers match-rename.py to run, which takes the name, which from [sports-video.org.ua](https://www.sport-video.org.ua/index.html) is normally formatted like 'Team A vs Team B dd.mm.yyyy.mkv' or 'Team A at Team B dd.mm.yyyy in 40.mkv', and it will format it based on the folder it is in with the structure required by the [SportScanner](https://github.com/mmmmmtasty/SportScanner) Plex plugin to pull metadata using the [TheSportsDB](https://www.thesportsdb.com/) API.
 
 For example: You add 'New England Patriots at Tampa Bay Buccaneers 09.11.2025.mkv.' to '/data/downloads/sports/NFL/Season 2025-2026'. The watcher recognizes that a new file has been added, and triggers match-rename.py to run. Then match-rename.py updates the name to 'NFL.2025.11.09.New-England-Patriots.vs.Tampa-Bay-Buccaneers.mkv' which, if you have the [SportScanner](https://github.com/mmmmmtasty/SportScanner) plugin for Plex, will now be readable to Plex.
 
