@@ -44,9 +44,6 @@ def rename_sports_file(file_path: Path):
     if len(year) == 2:
         year = "20" + year
 
-    # Expand year (assume 20xx)
-    year_full = year
-
     # Clean matchup (replace " vs. " and spaces)
     matchup_clean = f"{team1.replace(' ', '-')}.vs.{team2.replace(' ', '-')}"
 
